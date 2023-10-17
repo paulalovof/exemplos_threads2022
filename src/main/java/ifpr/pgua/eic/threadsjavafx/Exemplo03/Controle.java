@@ -54,17 +54,12 @@ public class Controle {
                 final String status = "Processing " + i + " of " + 10;
 
                 // Aqui serão atualizados os componentes da interface gráfica
-                Platform.runLater(new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
+                    Platform.runLater(() -> {
                         lbStatus.setText(status);
 
                         taContent.appendText(status+"\n");
 
-                    }
-                });
+                    });
 
                 Thread.sleep(1000);
             }

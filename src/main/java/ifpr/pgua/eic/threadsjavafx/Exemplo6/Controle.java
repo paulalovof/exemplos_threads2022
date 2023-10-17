@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextField;
 
 import java.time.LocalDateTime;
@@ -19,6 +20,9 @@ public class Controle {
 
     @FXML
     private TextField tfLista;
+
+    @FXML
+    private ProgressIndicator indicador;
 
     private DateTimeFormatter df=DateTimeFormatter.ofPattern("HH:mm:ss");
     private GeradorLista geradorLista;
@@ -65,9 +69,18 @@ public class Controle {
             protected Void call() throws Exception{
                 while(true){
                     Thread.sleep(1000);
+                    Platform.runLater(()->{
+                        tfLista.setText("Criando lista...");
+                    });
+
+                    Platform.runLater(()->{
+                        indicador.setVisible(true);
+                    });
+
                     geradorLista.novaLista();
                     Platform.runLater(()->{
                         tfLista.setText(geradorLista.getLista().toString());
+                        indicador.setVisible(false);
                     });
                 }
             }

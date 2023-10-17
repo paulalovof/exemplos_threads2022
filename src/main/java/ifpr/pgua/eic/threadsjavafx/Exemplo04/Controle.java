@@ -62,8 +62,8 @@ public class Controle {
                         // Get the Status
                         final String status = "Processing " + i + " of " + 10;
 
-                        this.updateProgress(i,10);
-                        this.updateMessage(status);
+                        this.updateProgress(i,10); //atualiza o progresso
+                        this.updateMessage(status); //atualiza a mensagem
                         Platform.runLater(new Runnable() {
                             @Override
                             public void run() {

@@ -28,7 +28,6 @@ public class Printer implements Runnable{
             }
             cont+=1;
         }
-    
     }
 
 

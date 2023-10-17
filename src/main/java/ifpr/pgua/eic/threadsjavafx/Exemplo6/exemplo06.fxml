@@ -3,6 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="ifpr.pgua.eic.threadsjavafx.Exemplo6.Controle"
@@ -16,6 +18,12 @@
 
     <Label fx:id="lbRelogio" text="Relogio..." />
 
-    <TextField fx:id="tfLista"/>
+    <StackPane>
+       
+        <TextField fx:id="tfLista"/>
+        <ProgressIndicator fx:id="indicador" visible="false"/>
+
+    </StackPane>
+
 
 </VBox>
