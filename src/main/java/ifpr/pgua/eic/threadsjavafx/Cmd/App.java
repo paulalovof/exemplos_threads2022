@@ -16,10 +16,10 @@ public class App {
             threads[i].start();
         }
 
-        /*
+        
         for(int i=0;i<printers.length;i++){
             threads[i].join();
-        }*/
+        }
 
         System.out.println("Finalizando...!!!");
 
